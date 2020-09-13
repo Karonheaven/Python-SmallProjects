@@ -19,11 +19,11 @@ from typing import List, Dict, Tuple, Set
 import os
 import re
 
-# +---------------+主程序+---------------+
-# 全局变量
-rule_providers: List[str] = ["rule-providers:\n"]
-rules: List[str] = ["rules:\n"]
 
+# +---------------+主程序+---------------+
+# # 全局变量
+# rule_providers: List[str] = ["rule-providers:\n"]
+# rules: List[str] = ["rules:\n"]
 
 def fix_illegal_chars(raw_str: str) -> str:
     """
@@ -119,8 +119,6 @@ def process_and_save(line_enable: str, line_name: str, line_targets: str, line_a
     # 若为domain，则使用domain的behavior
     if tg_type == "Targets":
         
-        
-        
         pass
     
     if tg_type == "Applications":
@@ -151,6 +149,12 @@ def process_and_save(line_enable: str, line_name: str, line_targets: str, line_a
     return None
 
 
+# 检查.ppx文件是否存在
+# 从Github上下载4Share.ppx
+ppx_file_dir = "./4Share - 10808.ppx"
+if not os.path.exists(ppx_file_dir):
+    raise ValueError("文件不存在，请检查文件或代码")
+
 # 创建文件夹
 if not os.path.exists("./rules-set-enabled"):
     os.makedirs("./rules-set-enabled")
@@ -158,17 +162,23 @@ if not os.path.exists("./rules-set-disabled"):
     os.makedirs("./rules-set-disabled")
 
 # 读取.ppx文件
-with open(file="./4Share - 10808.ppx", encoding="utf-8") as file_read:
+with open(file=ppx_file_dir, encoding="utf-8") as file_read:
     ppx_data_all = file_read.readlines()
 
 # 通过开头判断是否为.ppx文件
 if ppx_data_all[0] != "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n":
     raise ValueError
 
-# 最后将rule-providers和rules写入同一个yaml中
-file_write = open(file="./rules-set-enabled/allRules.yaml", mode="w+", encoding="utf-8")
-file_write.write("此文件仅为clash最终设置的部分内容，不能单独作为clash的设置文件\n")
-file_write.writelines(rule_providers)
-file_write.write("\n\n")
-file_write.writelines(rules)
-file_write.close()
+for line_index in ppx_data_all:
+    # 快进到RuleList
+    if
+    
+    pass
+
+# # 最后将rule-providers和rules写入同一个yaml中
+# file_write = open(file="./rules-set-enabled/allRules.yaml", mode="w+", encoding="utf-8")
+# file_write.write("此文件仅为clash最终设置的部分内容，不能单独作为clash的设置文件\n")
+# file_write.writelines(rule_providers)
+# file_write.write("\n\n")
+# file_write.writelines(rules)
+# file_write.close()
