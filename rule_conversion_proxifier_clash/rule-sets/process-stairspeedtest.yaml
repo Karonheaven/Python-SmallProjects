@@ -1,3 +1,0 @@
-payload:
-  - PROCESS-NAME,stairspeedtest.exe,DIRECT
-  - PROCESS-NAME,ss-libev.exe,DIRECT

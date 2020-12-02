@@ -1,5 +1,0 @@
-payload:
-  - PROCESS-NAME,TwitchUI.exe,DIRECT
-  - PROCESS-NAME,Twitch.exe,DIRECT
-  - PROCESS-NAME,obs64.exe,DIRECT
-  - PROCESS-NAME,obs32.exe,DIRECT

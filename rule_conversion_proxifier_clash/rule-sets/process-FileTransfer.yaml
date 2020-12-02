@@ -1,5 +1,0 @@
-payload:
-  - PROCESS-NAME,MobaSCPTransfer.exe,DIRECT
-  - PROCESS-NAME,FileZilla.exe,DIRECT
-  - PROCESS-NAME,fzsftp.exe,DIRECT
-  - PROCESS-NAME,"FileZilla Server.exe",DIRECT

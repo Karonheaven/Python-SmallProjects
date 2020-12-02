@@ -1,5 +1,0 @@
-payload:
-  - PROCESS-NAME,ShadowsocksR-dotnet2.0.exe,DIRECT
-  - PROCESS-NAME,ShadowsocksR-dotnet4.0.exe,DIRECT
-  - PROCESS-NAME,Shadowsocks.exe,DIRECT
-  - PROCESS-NAME,ck-client-windows-amd64.exe,DIRECT
