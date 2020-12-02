@@ -1,0 +1,6 @@
+payload:
+  - PROCESS-NAME,ssh.exe,DIRECT
+  - PROCESS-NAME,putty.exe,DIRECT
+  - PROCESS-NAME,MobaXterm.exe,DIRECT
+  - PROCESS-NAME,motty.exe,DIRECT
+  - PROCESS-NAME,Termius.exe,DIRECT

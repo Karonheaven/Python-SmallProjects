@@ -1,0 +1,10 @@
+Python：
+
+包：通俗来讲，包就是别人写好的代码
+pip：包管理器
+
+pandas：数据处理的包
+
+openpyxl：
+xlrd
+xlwt

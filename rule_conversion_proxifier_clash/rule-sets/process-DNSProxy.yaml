@@ -1,0 +1,5 @@
+payload:
+  - PROCESS-NAME,dnscrypt-proxy.exe,DIRECT
+  - PROCESS-NAME,Pcap_DNSProxy.exe,DIRECT
+  - PROCESS-NAME,Pcap_DNSProxy_x86.exe,DIRECT
+  - PROCESS-NAME,Pcap_DNSProxy_XP.exe,DIRECT

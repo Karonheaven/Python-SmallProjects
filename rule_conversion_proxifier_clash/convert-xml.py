@@ -106,8 +106,10 @@ for label_3rd in root.find("RuleList"):
         raise ValueError("action错误，rule name: {}".format(tg_name))
     
     # print(tg_enabled, tg_name, tg_type, tg_list, tg_action)
-    file_write = open(file="./rule-sets/{}-{}.yaml".format(tg_type, fix_illegal_chars(raw_str=tg_name)), mode="w+",
-                      encoding="utf-8")
+    file_write = open(
+        file="./rule-sets/{}-{}.yaml".format(tg_type, fix_illegal_chars(raw_str=tg_name)),
+        mode="w+",
+        encoding="utf-8")
     # 如果是domain类型，则按照以下形式写入文件
     # payload:
     #   - "+.baidu.com"

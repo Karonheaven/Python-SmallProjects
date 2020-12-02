@@ -1,0 +1,5 @@
+payload:
+  - PROCESS-NAME,v2rayN.exe,DIRECT
+  - PROCESS-NAME,v2ray.exe,DIRECT
+  - PROCESS-NAME,wv2ray.exe,DIRECT
+  - PROCESS-NAME,v2ctl.exe,DIRECT
