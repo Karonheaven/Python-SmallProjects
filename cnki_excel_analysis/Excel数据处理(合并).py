@@ -5,22 +5,33 @@
 # Update Date: 20201203
 # +---------------+---------------+
 
-# +---------------+---------------+
-# 所需的包
-# +---------------+---------------+
+# +---------------+所需的包+---------------+
 import pandas
 import sys
 
-# ---------------+---------------+
-# module 0
-# 功能：一个框架，写入写出
-# ---------------+---------------+
+# +---------------+基础知识+---------------+
 """
-一个完整的文件路径=文件所在的文件夹路径+文件名
+01. 完整的文件路径 = 文件夹路径 + 文件名 + 文件扩展名
+    例如："C:\data\text_excel.xlsx"中：
+        文件夹路径 = "C:\data"
+        文件名 = "text_excel"
+        扩展名 = "xlsx"
+02. Windows、Mac和Linux的文件路径分隔符号有所不同
+    Windows系统使用反斜杠“\”分隔；Mac和Linux使用正斜杠“/”分隔
+    在写Python代码的时候，一般统一使用“/”作为分隔符号
+    单个反斜杠“\”在代码中表示“转义”，会导致错误
+        若一定要用反斜杠表示路径，则需要使用两个反斜杠“\\”
 """
+
+# +---------------+Module 0: 代码组织的框架，包含读和写的操作+---------------+
 def module0(infile, outfile, path):
-    
-    
+    """Module 0 提供一般化的输入输出框架，后面的代码都是在这个module的基础上构建的
+
+    Args:
+        infile (str): 需要读取的Excel文件全名(文件名+扩展名)
+        outfile (str): 待写入的Excel文件全名(文件名+扩展名)
+        path (str): Excel文件所在的文件夹路径
+    """
     # 通过infile生成源Excel路径(infile_path)
     infile_path = path + "/" + infile
     # 通过outfile生成目标Excel路径(outfile_path)
@@ -35,11 +46,11 @@ def module0(infile, outfile, path):
     dataframe = pandas.read_excel(infile_path, sheet_name=0, header=None)
     
     # 对dataframe进行处理
-    # <----------这里写dataframe的处理代码---------->
+    # +---------------+这里写dataframe的处理代码+---------------+
     
     dataframe_modified = dataframe
     
-    # <----------这里写dataframe的处理代码---------->
+    # +---------------+这里写dataframe的处理代码+---------------+
     
     # 保存dataframe_modified到文件
     write = pandas.ExcelWriter(outfile_path)
@@ -52,13 +63,9 @@ def module0(infile, outfile, path):
     dataframe_modified.to_excel(write, sheet_name="Sheet1", index=False, header=None)
     write.save()
     
-    print("Done")
+    print("Success")
 
-
-# ---------------+---------------+
-# module 1
-# 功能：滤掉作者为空的非正式文献
-# ---------------+---------------+
+# +---------------+Module 1: 过滤作者为空的文献条目+---------------+
 """
 # 参考材料：
 https://blog.csdn.net/brink_compiling/article/details/76890198
@@ -67,8 +74,6 @@ python3 pandas读写excel
 https://blog.csdn.net/brucewong0516/article/details/79097909
 【python】pandas库pd.to_excel操作写入excel文件参数整理与实例
 """
-
-
 def module1(infile, outfile, path):
     # 获取源Excel路径(infile_path)，并将数据写入dataframe1中
     infile_path = path + "/" + infile
