@@ -9,3 +9,7 @@ Python的小项目
 - [ ] Rule Conversion Proxifier Clash：Proxifier和Clash规则的转换
     - [x] 基础功能：Proxifier to Clash
     - [ ] Clash to Proxifier
+
+Python小脚本(全部存放在"KH-Scripts")
+
+- [ ] 

@@ -12,12 +12,12 @@ import sys
 # +---------------+基础知识+---------------+
 """
 01. 完整的文件路径 = 文件夹路径 + 文件名 + 文件扩展名
-    例如："C:\data\text_excel.xlsx"中：
-        文件夹路径 = "C:\data"
+    例如："C:/data/text_excel.xlsx"中：
+        文件夹路径 = "C:/data"
         文件名 = "text_excel"
         扩展名 = "xlsx"
 02. Windows、Mac和Linux的文件路径分隔符号有所不同
-    Windows系统使用反斜杠“\”分隔；Mac和Linux使用正斜杠“/”分隔
+    Windows系统使用反斜杠“\”分隔(单击资源管理器的地址栏可以看出)；Mac和Linux使用正斜杠“/”分隔
     在写Python代码的时候，一般统一使用“/”作为分隔符号
     单个反斜杠“\”在代码中表示“转义”，会导致错误
         若一定要用反斜杠表示路径，则需要使用两个反斜杠“\\”
@@ -25,7 +25,8 @@ import sys
 
 # +---------------+Module 0: 代码组织的框架，包含读和写的操作+---------------+
 def module0(infile, outfile, path):
-    """Module 0 提供一般化的输入输出框架，后面的代码都是在这个module的基础上构建的
+    """
+    Module 0 提供一般化的输入输出框架，后面的代码都是在这个module的基础上构建的
 
     Args:
         infile (str): 需要读取的Excel文件全名(文件名+扩展名)
@@ -75,6 +76,14 @@ https://blog.csdn.net/brucewong0516/article/details/79097909
 【python】pandas库pd.to_excel操作写入excel文件参数整理与实例
 """
 def module1(infile, outfile, path):
+    """
+    [summary]
+
+    Args:
+        infile ([type]): [description]
+        outfile ([type]): [description]
+        path ([type]): [description]
+    """
     # 获取源Excel路径(infile_path)，并将数据写入dataframe1中
     infile_path = path + "/" + infile
     outfile_path = path + "/" + outfile
@@ -287,6 +296,8 @@ def module4(infile, outfile, path):
 # 主函数
 # ---------------+---------------+
 if __name__ == "__main__":
+    # 通过sys.path[0]获取这个Python脚本所在的文件夹路径，也就是所有Excel文件所在的路径
+    # 这个路径可以修改，指定为存放Excel文件的路径，例如"C:/TestData"
     path = sys.path[0]
     
     # module0("0-test-infile.xlsx", "0-test-outfile.xlsx", path)
