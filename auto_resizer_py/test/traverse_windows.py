@@ -37,13 +37,13 @@ class Ergodic():
     def get_all_hwnd1(self, hwnd, mouse):
         # if win32gui.IsWindow(hwnd) and win32gui.IsWindowEnabled(hwnd) and win32gui.IsWindowVisible(hwnd):
         if win32gui.IsWindowVisible(hwnd) and win32gui.IsWindowEnabled(hwnd):
-            self.windows.update({hwnd: win32gui.GetWindowText(hwnd) + ';' + win32gui.GetClassName(hwnd)})
+            self.win_ids.update({hwnd: win32gui.GetWindowText(hwnd) + ';' + win32gui.GetClassName(hwnd)})
 
     def get_child_window(self,hwnd):
-        self.windows = dict()
-        win32gui.EnumChildWindows(hwnd, self.get_all_hwnd1, self.windows)
-        print(self.windows)
-        return self.windows
+        self.win_ids = dict()
+        win32gui.EnumChildWindows(hwnd, self.get_all_hwnd1, self.win_ids)
+        print(self.win_ids)
+        return self.win_ids
     """
     
     def __call__(self, *args, **kwargs):
@@ -52,7 +52,7 @@ class Ergodic():
         
         for h, t in self.hwnd_title.items():
             if t != "":
-                print(h, t)
+                print("H: {}, T:{}".format(h, t))
         return self.hwnd_title
 
 
