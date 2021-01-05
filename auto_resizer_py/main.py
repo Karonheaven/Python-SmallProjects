@@ -24,6 +24,11 @@ import psutil
 # 本地库/自定义库导入
 
 
+# +---------------+TO DO+---------------+
+# TODO(karonheaven@gmail.com): 获取屏幕尺寸
+# TODO(karonheaven@gmail.com): 根据Class Name List筛选指定进程
+# TODO(karonheaven@gmail.com): 根据进程ID调整窗口大小
+
 # +---------------+全局变量&预定义+---------------+
 # 调用底层API函数
 # user32 = windll.user32
@@ -31,9 +36,8 @@ import psutil
 # psapi = windll.psapi
 
 # 获取当前屏幕的有效尺寸
-# TODO(karonheaven@gmail.com): 获取屏幕尺寸
-# TODO(karonheaven@gmail.com): 根据Class Name List筛选指定进程
-# TODO(karonheaven@gmail.com): 根据进程ID调整窗口大小
+
+
 
 # 实时查看当前窗口
 def getProcessInfo():
